@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  get '/' => 'books#index', as: 'books'
-  resources :books, only: [:new, :show, :edit]
+  get '/' => 'books#top'
+  resources :books, only: [:index, :new, :show, :edit]
 end
