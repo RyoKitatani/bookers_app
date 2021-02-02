@@ -1,10 +1,10 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.all.order(created_at: :desc)
   end
 
   def new
-    @book = Book.new
+    @book = Book.ne
   end
 
   def create 
@@ -12,7 +12,7 @@ class BooksController < ApplicationController
     if book.save
       redirect_to book_path(book.id)
     else
-      render "new"
+      render 'index'
     end
   end
 
