@@ -4,7 +4,7 @@
     <%= book.title %>
     <h3>Body</h3>
     <%= book.body %>
-    <%= link_to "Show", book_path %>
-    <%= link_to "Edit", edit_book_path(@book) %>
-    <%= link_to "Destroy", %>
+    <%= link_to "Show", book_path(book.id) %>
+    <%= link_to "Edit", edit_book_path(book.id) %>
+    <%= link_to "Destroy", books_path, method: :delete, "data-confirm" => "Are you sure?" %>
 <% end %>
