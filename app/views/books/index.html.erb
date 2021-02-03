@@ -1,9 +1,11 @@
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+<p id="notice">
+    <% if flash[:notice] %>
+    <%= flash[:notice] %>
+    <% end %>
+</p>
 
 <h1>Books</h1>
-<table border="1">
+<table>
     <thread>
         <tr>
             <th>Title</th>
@@ -23,7 +25,7 @@
         </tbody>
     </table>
 
-<h1>New book</h1>
+<h2>New book</h2>
 <%= form_with model:@book, local:true do |f|%>  
     <% if @book.errors.any? %>
         <h3><%= @book.errors.count %>prohibited this book from being saved:</h3>
@@ -33,10 +35,15 @@
             <% end %>
         </ul>
     <% end %>
-    <h4>Title</h4>
-    <%= f.text_field :title %>
-    <h4>Body</h4>
-    <%= f.text_area :body %>
-    <br>
+    <div class="field">
+        <label for ="book_title">Title</label><br>
+        <%= f.text_field :title %>
+    </div>
+    <div class="field">
+        <label for ="book_body">Body</label><br>
+        <%= f.text_area :body %>
+    </div>
+    <div class="action">
     <%= f.submit "Create Book" %>
+    </div>
 <% end %> 
