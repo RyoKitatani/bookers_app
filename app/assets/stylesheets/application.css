@@ -23,7 +23,7 @@ body {
   margin: 33px;
 }
 
-p {
+p, td{
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -39,7 +39,7 @@ h1 {
   margin: 17.42px 0;
 }
 
-.field {
+.field, .actions {
   margin-bottom: 10px;
 }
 
@@ -52,9 +52,26 @@ form {
   margin-top: 0;
 }
 
-table {
-  display: table;
-  border-spacing: 2px;
-  border-color: grey;
-
+th {
+  padding-top:  5px;
 }
+ 
+td {
+  padding-bottom: 7px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+a {
+  color: #000;
+}
+
+a:visited {
+  color: #666;
+}
+
+a:hover {
+  color: #fff;
+  background-color: #000;
+}
+
